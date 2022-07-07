@@ -33,6 +33,16 @@ This template should help get you started developing with Vue 3 in Vite.
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
+## Volar 
+* Is a VSCode plugin that offers vue language support
+* Volar uses [petite-vue](https://github.com/vuejs/petite-vue), an alternative distribution of Vue optimized for progressive enhancement.
+* Volar also supports Static Site Generation using [VitePress](https://vitepress.vuejs.org/guide/what-is-vitepress.html)
+    * VitePress is currently in alpha status. It is already suitable for out-of-the-box documentation use, but the config and theming API may still change between minor releases.
+
+## [Vite](https://vitejs.dev/)
+* Vite is a lightweight and fast build tool with first-class Vue SFC support. It is created by Evan You, who is also the author of Vue!
+* Vue CLI is the official webpack-based toolchain for Vue. It is now in maintenance mode and we recommend starting new projects with Vite unless you rely on specific webpack-only features. Vite will provide superior developer experience in most cases.
+
 ## Type Support for `.vue` Imports in TS
 
 TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
@@ -84,3 +94,19 @@ npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ```sh
 npm run lint
 ```
+
+### How is everytinhg connected
+* The `index.html` file loads the `/src/main.js` file.
+* The `main.js` will load the `App.vue` 
+```
+    import App from './App.vue'
+```
+* The `App.vue` loads other required components
+
+## Documentation sources
+* https://vuejs.org/guide/scaling-up/tooling.html
+* https://github.com/johnsoncodehk/volar
+* https://github.com/vuejs/petite-vue
+* https://vitejs.dev/
+* https://medium.com/js-imaginea/the-vue-js-internals-7b76f76813e3
+* https://webpack.js.org/concepts/
