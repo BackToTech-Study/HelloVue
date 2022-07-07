@@ -42,6 +42,7 @@ This template should help get you started developing with Vue 3 in Vite.
 ## [Vite](https://vitejs.dev/)
 * Vite is a lightweight and fast build tool with first-class Vue SFC support. It is created by Evan You, who is also the author of Vue!
 * Vue CLI is the official webpack-based toolchain for Vue. It is now in maintenance mode and we recommend starting new projects with Vite unless you rely on specific webpack-only features. Vite will provide superior developer experience in most cases.
+* in this example the vite configuration information is stored in the `vite.config.js` file
 
 ## Type Support for `.vue` Imports in TS
 
@@ -109,4 +110,5 @@ npm run lint
 * https://github.com/vuejs/petite-vue
 * https://vitejs.dev/
 * https://medium.com/js-imaginea/the-vue-js-internals-7b76f76813e3
+* https://vitejs.dev/guide/ (If you want to dig deeper take a look at vite templates)
 * https://webpack.js.org/concepts/
