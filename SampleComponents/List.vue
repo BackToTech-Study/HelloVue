@@ -3,14 +3,13 @@
 let id = 0
 
 export default {
+  props: {
+    todosParam: Array
+  },
   data() {
     return {
       newTodo: '',
-      todos: [
-        { id: id++, text: 'Learn HTML' },
-        { id: id++, text: 'Learn JavaScript' },
-        { id: id++, text: 'Learn Vue' }
-      ]
+      todos: this.todosParam
     }
   },
   methods: {
@@ -19,7 +18,8 @@ export default {
       this.newTodo = ''
     },
     removeTodo(todo) {
-      this.todos = this.todos.filter((t) => t !== todo)
+      this.todos.splice(this.todos.indexOf(todo), 1)
+      this.$emit('remove', todo)
     }
   }
 }

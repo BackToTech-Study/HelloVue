@@ -1,7 +1,21 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import Form from '../../SampleComponents/Form.vue';
+import List from '../../SampleComponents/List.vue';
+import Props from '../../SampleComponents/Props.vue';
 </script>
+
+
+<script>
+  var todoList = [ { id: 1, text: 'Learn HTML' },  { id: 2, text: 'Learn JavaScript' }, { id: 3, text: 'Learn Vue' }];
+  var formParams = "some";
+
+  function handleRemove(todo) {
+    console.log(`removed: ${todo.id} - ${todo.text}`);
+  }
+</script>
+
 
 <template>
   <header>
@@ -11,9 +25,12 @@ import TheWelcome from './components/TheWelcome.vue'
       <HelloWorld msg="You did it!" />
     </div>
   </header>
-
+            
   <main>
-    <TheWelcome />
+    <Form :inputValue = formParams />
+    <List :todosParam = todoList @remove = "handleRemove" />
+    <Props />
+    <!-- <TheWelcome /> -->
   </main>
 </template>
 

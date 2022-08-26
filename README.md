@@ -11,7 +11,6 @@
 
 ## Demo concepts
 * [ ] Declarative Rendering 
-* [ ] Attribute Bindings 
 * [ ] Event Listeners 
 * [ ] Form Bindings 
 * [ ] Conditional Rendering 
@@ -20,9 +19,55 @@
 * [ ] Lifecycle and Template Refs 
 * [ ] Watchers 
 * [ ] Components 
-* [ ] Props
-* [ ] Emits 
 * [ ] Slots 
+* [x] Emits can be used to call a callback function defined in the parent
+```
+    <script>
+    function handleRemove(todo) {
+        console.log(`removed: ${todo.id} - ${todo.text}`);
+    }
+    </script>
+    ....
+    <List :todosParam = todoList @remove = "handleRemove" />
+```
+
+```
+    removeTodo(todo) {
+      this.todos.splice(this.todos.indexOf(todo), 1)
+      this.$emit('remove', todo)
+    }
+```
+
+
+* [x] Attribute Bindings (passing props to a component). Implemented using `v-bind:` or short `:`
+```
+    <List :todos = "[ { id: 1, text: 'Learn HTML' },  { id: 2, text: 'Learn JavaScript' }, { id: 3, text: 'Learn Vue' }]" />
+```
+
+* [x] Props Component parameters are received with `props`
+```
+  props: {
+    todos: Array
+  },
+```
+
+* [x] Props are read only. You can save them in local variable
+```
+  props: {
+    todosParam: Array
+  },
+  data() {
+    return {
+      newTodo: '',
+      todos: this.todosParam
+    }
+  },
+```
+
+* [x] `v-model` used as 2 way binding
+```
+    <input v-model="newTodo">
+```
 
 ## How to view output on local machine without NodeJS
 * You must have an entry point in the application (in our case `index.html`)

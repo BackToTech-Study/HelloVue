@@ -1,8 +1,11 @@
 <script>
 export default {
+  props: {
+    inputValue: String
+  },
   data() {
     return {
-      text: ''
+      text: this.inputValue
     }
   }
 }
